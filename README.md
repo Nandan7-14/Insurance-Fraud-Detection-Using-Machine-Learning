@@ -1,3 +1,9 @@
+## Demo Video
+
+Watch the project demonstration here:
+
+[Demo Video Link](https://drive.google.com/file/d/1Dl77nE7prg2Dg6fqxmUr24veC_HzfzJu/view?usp=sharing)
+
 Insurance Fraud Detection Using Machine Learning
 Project Overview
 
@@ -196,3 +202,16 @@ Several classification models were trained and evaluated, including Logistic Reg
 Among these models, Naïve Bayes and Support Vector Machine achieved the highest accuracy, demonstrating their effectiveness in detecting fraudulent insurance claims.
 
 The developed system can help insurance companies identify suspicious claims early and improve fraud detection processes.
+
+Architecture Diagram
+Dataset
+   ↓
+Data Preprocessing
+   ↓
+Feature Engineering
+   ↓
+Machine Learning Models
+   ↓
+Model Evaluation
+   ↓
+Flask Web Application
