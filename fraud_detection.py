@@ -115,6 +115,12 @@ plt.ylabel("Actual")
 
 plt.show()
 
+import pickle
+
+# Save trained model
+with open("fraud_model.pkl", "wb") as f:
+    pickle.dump(nb, f)
+
 
 
 
