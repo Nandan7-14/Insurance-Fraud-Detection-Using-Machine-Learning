@@ -1,0 +1,249 @@
+
+
+# Insurance Fraud Detection Using Machine Learning
+
+## 1. Introduction
+
+Insurance fraud is a major problem faced by insurance companies worldwide. Fraudulent claims result in significant financial losses and increase operational costs. Detecting such fraud manually is difficult because of the large volume of insurance claims and complex patterns involved.
+
+Machine Learning techniques can analyze large datasets and identify patterns that indicate fraudulent activities. This project implements a machine learning system that predicts whether an insurance claim is fraudulent or genuine.
+
+---
+
+# 2. Problem Statement
+
+Insurance companies process thousands of claims every day. Some claimants attempt to obtain benefits they are not entitled to by submitting false or exaggerated claims. Detecting such fraudulent activities manually is time-consuming and inefficient.
+
+The objective of this project is to build a machine learning system capable of analyzing historical insurance claim data and predicting whether a claim is fraudulent or legitimate.
+
+---
+
+# 3. Business Requirements
+
+The system should fulfill the following requirements:
+
+* Analyze historical insurance claim data.
+* Identify patterns associated with fraudulent claims.
+* Train machine learning models to detect fraud.
+* Predict whether a new claim is fraudulent or genuine.
+* Assist insurance companies in reducing financial losses caused by fraudulent claims.
+
+---
+
+# 4. Literature Survey
+
+Several researchers have explored machine learning techniques for detecting insurance fraud.
+
+| Author          | Year | Contribution                                                                             |
+| --------------- | ---- | ---------------------------------------------------------------------------------------- |
+| Viaene et al.   | 2004 | Applied Bayesian learning neural networks to detect automobile insurance fraud.          |
+| Phua et al.     | 2010 | Presented a survey of fraud detection techniques using data mining and machine learning. |
+| Ngai et al.     | 2011 | Reviewed data mining applications for financial and insurance fraud detection.           |
+| Abdallah et al. | 2016 | Surveyed machine learning techniques for fraud detection systems.                        |
+| Baesens et al.  | 2015 | Demonstrated predictive analytics methods for fraud detection in financial systems.      |
+
+These studies show that machine learning algorithms such as Random Forest, SVM, and Bayesian classifiers are effective in identifying fraudulent transactions.
+
+---
+
+# 5. Dataset Description
+
+The dataset used in this project contains historical insurance claim records.
+
+### Dataset Characteristics
+
+| Feature          | Description    |
+| ---------------- | -------------- |
+| Total Records    | 1000           |
+| Total Attributes | 40             |
+| Target Variable  | fraud_reported |
+
+The dataset includes information such as:
+
+* Customer information (age, occupation, relationship)
+* Policy information (policy state, deductible, premium)
+* Incident details (incident type, severity)
+* Claim information (total claim amount, injury claim, property claim)
+* Vehicle details (make, model, year)
+
+The target variable **fraud_reported** indicates whether the claim is fraudulent.
+
+| Value | Meaning          |
+| ----- | ---------------- |
+| 0     | Genuine Claim    |
+| 1     | Fraudulent Claim |
+
+---
+
+# 6. Data Preprocessing
+
+Before training machine learning models, several preprocessing steps were applied to the dataset.
+
+### Data Cleaning
+
+* Removed unnecessary columns such as **policy_number** and **_c39**
+* Replaced missing values represented by **?** with **NaN**
+* Removed rows containing missing values
+
+### Encoding Categorical Features
+
+Categorical variables such as:
+
+* policy_state
+* incident_type
+* insured_occupation
+
+were converted into numerical form using **Label Encoding**.
+
+### Feature Scaling
+
+Feature scaling was applied using **StandardScaler** to normalize numerical values and improve model performance.
+
+---
+
+# 7. Exploratory Data Analysis
+
+Exploratory Data Analysis (EDA) was performed to understand patterns in the dataset.
+
+The following analyses were performed:
+
+* Distribution of fraudulent vs genuine claims
+* Claim amount distribution
+* Incident severity analysis
+* Age distribution of policyholders
+* Feature correlation analysis
+
+EDA helps identify relationships between variables that may indicate fraudulent behavior.
+
+---
+
+# 8. Machine Learning Models
+
+Several classification algorithms were implemented to detect fraudulent claims.
+
+## Logistic Regression
+
+Logistic Regression is a statistical classification algorithm used for binary classification problems. It predicts the probability that a claim is fraudulent.
+
+---
+
+## Decision Tree
+
+Decision Tree is a rule-based model that splits data based on feature values to make predictions.
+
+---
+
+## Random Forest
+
+Random Forest is an ensemble learning method that combines multiple decision trees to improve prediction accuracy.
+
+---
+
+## K-Nearest Neighbors (KNN)
+
+KNN classifies data points based on the majority class of their nearest neighbors.
+
+---
+
+## Naïve Bayes
+
+Naïve Bayes is a probabilistic classifier based on Bayes’ theorem.
+
+---
+
+## Support Vector Machine (SVM)
+
+SVM finds the optimal boundary that separates fraudulent and genuine claims.
+
+---
+
+# 9. Model Comparison
+
+The performance of each model was evaluated using accuracy.
+
+| Model               | Accuracy |
+| ------------------- | -------- |
+| Logistic Regression | 0.75     |
+| Decision Tree       | 0.77     |
+| Random Forest       | 0.76     |
+| KNN                 | 0.73     |
+| Naïve Bayes         | 0.79     |
+| SVM                 | 0.79     |
+
+The results show that **Naïve Bayes and SVM achieved the highest accuracy**, making them the best performing models for this dataset.
+
+---
+
+# 10. Model Deployment
+
+The trained machine learning model was deployed using a **Flask web application**.
+
+The deployment process includes:
+
+1. User enters claim information through a web interface.
+2. The input is processed by the Flask backend.
+3. The trained machine learning model predicts whether the claim is fraudulent or genuine.
+4. The prediction result is displayed on the web page.
+
+The web application runs locally at:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+# 11. Technologies Used
+
+| Technology   | Purpose                     |
+| ------------ | --------------------------- |
+| Python       | Programming language        |
+| Pandas       | Data manipulation           |
+| NumPy        | Numerical operations        |
+| Matplotlib   | Data visualization          |
+| Seaborn      | Statistical visualization   |
+| Scikit-learn | Machine learning algorithms |
+| Flask        | Web deployment              |
+
+---
+
+# 12. Project Structure
+
+```
+Insurance-Fraud-Detection-Using-Machine-Learning
+│
+├── dataset
+│   └── insurance_claims.csv
+│
+├── templates
+│   └── index.html
+│
+├── fraud_detection.py
+├── app.py
+├── fraud_model.pkl
+├── README.md
+├── PROJECT_REPORT.pdf
+└── requirements.txt
+```
+
+---
+
+# 13. Conclusion
+
+This project implemented several machine learning algorithms to detect fraudulent insurance claims using historical claim data. Multiple models were trained and evaluated to determine the most effective algorithm.
+
+Among the tested models, **Naïve Bayes and Support Vector Machine achieved the highest accuracy**. The trained model was deployed using a Flask web application to allow users to interact with the system and obtain predictions.
+
+The proposed system can assist insurance companies in identifying suspicious claims and reducing financial losses caused by fraudulent activities.
+
+---
+
+# 14. References
+
+1. Viaene, S., Derrig, R., Baesens, B., & Dedene, G. (2004). A comparison of state-of-the-art classification techniques for expert automobile insurance claim fraud detection.
+2. Phua, C., Lee, V., Smith, K., & Gayler, R. (2010). A comprehensive survey of data mining-based fraud detection research.
+3. Ngai, E. W. T., Hu, Y., Wong, Y. H., Chen, Y., & Sun, X. (2011). The application of data mining techniques in financial fraud detection.
+4. Abdallah, A., Maarof, M., & Zainal, A. (2016). Fraud detection system: A survey.
+
+---
+
